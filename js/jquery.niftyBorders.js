@@ -1,4 +1,4 @@
-/!**
+/**!
 jQueryNiftyBorders is a simple jQuery plugin that makes easy to create some nifty border animations while hovering on DOM elements such as images or divs.
 
 @usage $("yourSelector").niftyBorders( options );
