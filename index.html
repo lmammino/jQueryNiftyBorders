@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <!--[if IE]><![endif]-->
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>jQueryNiftyBorders Demo</title>
+  <meta name="description" content="jQueryNiftyBorders is a simple jQuery plugin to create some nifty border animations">
+  <meta name="author" content="Andrea M, Luciano M">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+  <link rel="stylesheet" href="demo/css/style.css?v=1">
+  <script src="demo/js/modernizr-1.5.min.js"></script>
+
+</head>
+<!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+
+  <div id="container">
+    <header>
+		<h1>jQueryNiftyBorders</h1>
+    </header>
+    
+    <div id="main">
+		<div id="buttonBar">
+			<a href="demo"><span class="button">Try the demo!</span></a>
+			
+			<a href="http://github.com/loige/jQueryNiftyBorders/"><span class="button">Fork on github</span></a>
+			
+			<a href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Floige.altervista.org%2FjQueryNiftyBorders&linkname=A+simple+jQuery+plugin+to+create+nifty+border+animations"><span class="button">+ SHARE!</span></a>
+		</div>
+
+		<p>jQueryNiftyBorders is a simple jQuery plugin that makes easy to create some nifty border animations while hovering on DOM elements such as images or divs.
+		It has been inspired by the wonderful work of <a href="http://twitter.com/RobinThrift">Robin Thrift</a> and <a href="http://twitter.com/chriscoyier">Chris Coyier</a>, the &#8220;<a href="http://css-tricks.com/inset-border-effect/">inset border effect jQuery plugin</a>&#8221;.</p>
+		
+		<h2>Quick demo</h2>
+		<div id="quickDemo">Loading flickr images...</div>
+
+		<h2 id="stateoftheart">State of the art</h2>
+
+		<p>The plugin has been developed in a few hours and actually it has been only superficially tested. We only realized a <a href="demo">demo</a> page where everything seems to work but, we know, a deeper testing session should be done to gain more reliability.
+		So currently we must discourage the production environment usage.
+		We decided to push this early version of plugin on github just because we believe on the github community power. If you&#8217;re a jQuery guru and you like this project don&#8217;t hesitate to fork the project or to send us some suggestion to make it better and better.</p>
+
+		<h2 id="developers">Developers</h2>
+
+		<ul>
+		<li><a href="mailto:kapitan0@hotmail.it">Andrea M</a></li>
+		<li><a href="mailto:loige@hotmail.it">Luciano &#8220;loige&#8221; M</a></li>
+		</ul>
+
+		<h2 id="usage">Usage</h2>
+
+		<p>Like most jQuery plugins you have to chain the specific plugin function to a jQuery selector to apply the plugin behavior to the selected elements.
+		In this case you can simply call:</p>
+
+		<pre><code>$("yourSelector").niftyBorders( options );
+		</code></pre>
+
+		<p>The list of all the available options is provided below.</p>
+
+		<h2 id="options">Options</h2>
+
+		<p>Here&#8217;s a list of all the available options. The default value is in brackets.</p>
+
+		<ul>
+		<li><code>speed</code> (<em>&#8220;fast&#8221;</em>): The speed of the animation of the borders. You can use the default string values &#8220;slow&#8221;, &#8220;medium&#8221; or &#8220;fast&#8221; constants or an integer that indicates the duration in ms of the animation.</li>
+		<li><code>easing</code> (<em>&#8220;swing&#8221;</em>): The animation easing function</li>
+		<li><code>borderTickness</code> (<em>0</em>): the default tickness of the borders (in pixel)</li>
+		<li><code>borderColor</code> (<em>&#8220;#fff&#8221;</em>): the border color</li>
+		<li><code>borderOpacity</code> (<em>1</em>): the default opacity of the borders (from <em>0.0</em> to <em>1.0</em>)</li>
+		<li><code>borderType</code> (<em>&#8220;solid&#8221;</em>):  the type of borders. Eg. &#8220;solid&#8221;, &#8220;dotted&#8221;,&#8221;double&#8221;, &#8220;inset&#8221;, etc&#8230;</li>
+		<li><code>borderHoverTickness</code> (<em>10</em>):  the tickness of the border when the mouse cursor is over the element</li>
+		<li><code>borderHoverOpacity</code> (<em>1</em>): the opacity of the border when the mouse cursor is over the element</li>
+		<li><code>containerClass</code> (<em>&#8220;nb</em>container&#8221;_): the class that is assigned to a new div that will be created to surround and mask the selected DOM element</li>
+		<li><code>bordersClass</code> (<em>&#8220;nb</em>borders&#8221;_): the class that is assigned to a div created to draw the borders</li>
+		<li><code>onMouseEnter</code> (<em>$.noop</em>): a callback function that will be called on mouse enter (mouse cursor over the element)</li>
+		<li><code>onMouseLeave</code> (<em>$.noop</em>): a callback function that will be called on mouse leave</li>
+		</ul>
+
+		<h2 id="license">License</h2>
+
+		<p>You are free to use this plug in in any way you want non-commercially and commercially. However if you redistribute (even when altered by you) you have to give credit to the developers by linking the original github page of the project.</p>
+
+		<h2 id="whatthehellthisisnotenglishthisis_macaronienglish_">What the hell! This is not english! This is <em>&#8220;Macaroni English&#8221;</em> !!!</h2>
+
+		<p>We, the developers, are both Italian guys. Our english knowledge is just &#8220;scolastic&#8221;, so our english is really far from perfection. Please be quite if this documents is not correct. We just hope that it&#8217;s clear enough! If your english is better than ours (surely it is), please feel free to send us some suggestion to improve the whole plugin documentation: you&#8217;ll be officially rewarded with a beer (maybe a virtual one, but that&#8217;s just a detail :P).</p>
+
+		<h3 id="thankyouforbeinginterestedonthisproject">Thankyou for being interested on this project ! ;)</h3>
+	
+    </div>
+    
+    <footer>
+		<p>This page is HTML5 enabled thanks to <a href="http://html5boilerplate.com/">HTML5*Boilerplate</a>!</p>
+		<p>All the photos has been taken from <a href="http://www.flickr.com/photos/21272841@N05/">loige's flickr photostream</a>. If you have found this photos interesting take a look here: <a href="http://www.liu-bo.it">liu-bo.it</a></p>
+    </footer>
+  </div> <!-- end of #container -->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script>!window.jQuery && document.write('<script src="js/extra/jquery.js"><\/script>')</script>
+  <script src="js/jquery.niftyBorders.min.js?v=1"></script>
+  <script>
+		jQuery(function($){
+
+			$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=21272841@N05&format=json&jsoncallback=?",
+				function(data){
+			  		$("#quickDemo").html("");
+					$.each(data.items, function(i,item){
+			    		$("<img style=\"width:100px; height: 74px;\"/>").attr("src", item.media.m).appendTo("#quickDemo")
+			      		.wrap("<div class=\"photo\" style=\"float:left; margin: 0px 10px 10px 0;\"><a href='" + item.link + "'></a></div>");
+			  		});
+			
+					$('<div class="clear"/>').appendTo("#quickDemo");
+
+					$("#quickDemo .photo img").niftyBorders({
+						borderColor: "#1e4ea6",
+						borderTickness: 4,
+						borderHoverTickness : 0,
+					});
+
+				});
+
+
+
+
+		});
+	</script>
+
+  <!--[if lt IE 7 ]>
+    <script src="js/dd_belatedpng.js?v=1"></script>
+  <![endif]-->
+  
+</body>
+</html>

@@ -137,6 +137,12 @@ footer
 	text-align: right;
 }
 
+#buttonBar
+{
+	margin-bottom: 20px;
+	text-align: center;
+}
+
 span.button
 {
 	background: #eee;
