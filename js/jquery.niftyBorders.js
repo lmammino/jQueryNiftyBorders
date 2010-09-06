@@ -1,4 +1,4 @@
-/**!
+/*!
 jQueryNiftyBorders is a simple jQuery plugin that makes easy to create some nifty border animations while hovering on DOM elements such as images or divs.
 
 @usage $("yourSelector").niftyBorders( options );
@@ -13,6 +13,8 @@ jQueryNiftyBorders is a simple jQuery plugin that makes easy to create some nift
 // Creates no $ conflict 
 (function($){  
 	$.fn.niftyBorders = function(options) {  
+		
+		var self = this;
 		
 		// the set of the default options
 		var defaults = {
@@ -32,11 +34,10 @@ jQueryNiftyBorders is a simple jQuery plugin that makes easy to create some nift
 	
 		var options = $.extend(defaults, options);  // merges the provided options with the default ones
     
-		// executes the code on the selected elements
-		return this.each( function(i) 
-		{  
+		// function that initializes an object
+		self.init = function(obj)
+		{
 			var 
-				obj = $(this), // the current element
 				w = obj.outerWidth(), // the width of the current element
 				h = obj.outerHeight(), // the heiht of the current element
 				container = obj.wrap('<div class="' + options.containerClass + '">').parent(), // a container used to mask the current element
@@ -58,17 +59,17 @@ jQueryNiftyBorders is a simple jQuery plugin that makes easy to create some nift
 							  	"left" : scaleHover, 
 							  	"opacity": options.borderHoverOpacity
 				};
-			
+
 			// applies some style to the container to mask its overflowing content	
 			container.css( {width: w, 
 							height: h, 
 							"position" : "relative", 
 							"overflow" : "hidden"});
-			
+
 			// applies some style to the borders div
 			borders.css( { border: (borderTickness) + "px " + options.borderType + " " + options.borderColor, 
 						  "position" : "absolute"}).css(bordersStyle);
-			
+
 			// adds the hover behaviors
 			container.hover(function(){
 				borders.stop().animate( bordersHoverStyle, options.speed, options.easing, options.onMouseEnter )
@@ -76,6 +77,45 @@ jQueryNiftyBorders is a simple jQuery plugin that makes easy to create some nift
 			function(){
 				borders.stop().animate( bordersStyle, options.speed, options.easing, options.onMouseLeave )
 			})
+		} // end init function
+
+
+
+		// executes the code on the selected elements
+		return this.each( function(i) 
+		{  
+			var obj = $(this); // the current element
+			
+			// defines an object that checks if the current element contains images to load
+			// to initialize the element only after all the images has been loaded
+			obj.loader = {
+	            images : (obj[0].nodeName === "IMG")? obj : obj.find("img"),
+	            loaded : 0,
+	            check : function(){
+	              if(obj.loader.images.length == obj.loader.loaded)
+	              {
+						self.init(obj);
+	              }
+	            },
+	            handler : function(event){
+					obj.loader.loaded++;
+	                obj.loader.check();
+	            }
+        	};
+
+        	for(var i=0; i < obj.loader.images.length; i++)
+	        {
+	            if(obj.loader.images[i].complete == true)
+	            {
+	                obj.loader.loaded++;
+	            }
+	            else
+	            {
+	                $(obj.loader.images[i]).load(obj.loader.handler);
+	            }
+	        }
+
+        	obj.loader.check();	
 		}); 
 		 
 	};  
