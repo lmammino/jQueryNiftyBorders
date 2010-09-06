@@ -198,7 +198,115 @@ a:hover span.button
 }
 
 
+#social_outer {
+margin:0 0 20px 50%;
+display: none;
+}
 
+#social_outer a {
+background:transparent url(images/socialshare.gif) no-repeat scroll left top;
+display:block;
+float:left;
+height:22px;
+margin:4px 4px 0 0;
+width:22px;
+}
+#social_outer a span {
+display:none;
+}
+#social_outer .sprite_delicious {
+background-position:0 -27px;
+}
+#social_outer .sprite_delicious:hover {
+background-position:0 0;
+}
+#social_outer .sprite_designbump {
+background-position:0 -81px;
+}
+#social_outer .sprite_designbump:hover {
+background-position:0 -54px;
+}
+#social_outer .sprite_designfloat {
+background-position:0 -135px;
+}
+#social_outer .sprite_designfloat:hover {
+background-position:0 -108px;
+}
+#social_outer .sprite_designmoo {
+background-position:0 -189px;
+}
+#social_outer .sprite_designmoo:hover {
+background-position:0 -162px;
+}
+#social_outer .sprite_digg {
+background-position:0 -243px;
+}
+#social_outer .sprite_digg:hover {
+background-position:0 -216px;
+}
+#social_outer .sprite_email {
+background-position:0 -297px;
+}
+#social_outer .sprite_email:hover {
+background-position:0 -270px;
+}
+#social_outer .sprite_facebook {
+background-position:0 -351px;
+}
+#social_outer .sprite_facebook:hover {
+background-position:0 -324px;
+}
+#social_outer .sprite_friendfeed {
+background-position:0 -405px;
+}
+#social_outer .sprite_friendfeed:hover {
+background-position:0 -378px;
+}
+#social_outer .sprite_googlebuzz {
+background-position:0 -459px;
+}
+#social_outer .sprite_googlebuzz:hover {
+background-position:0 -432px;
+}
+#social_outer .sprite_moreaddtoany {
+background-position:0 -513px;
+}
+#social_outer .sprite_moreaddtoany:hover {
+background-position:0 -486px;
+}
+#social_outer .sprite_reddit {
+background-position:0 -567px;
+}
+#social_outer .sprite_reddit:hover {
+background-position:0 -540px;
+}
+#social_outer .sprite_stumbleupon {
+background-position:0 -621px;
+}
+#social_outer .sprite_stumbleupon:hover {
+background-position:0 -594px;
+}
+#social_outer .sprite_technorati {
+background-position:0 -675px;
+}
+#social_outer .sprite_technorati:hover {
+background-position:0 -648px;
+}
+#social_outer .sprite_twitter {
+background-position:0 -729px;
+}
+#social_outer .sprite_twitter:hover {
+background-position:0 -702px;
+}
+#social_outer .sprite_forrst {
+background-position:0 -783px;
+}
+#social_outer .sprite_forrst:hover {
+background-position:0 -756px;
+}
+#social_outer .last {
+margin-right:0;
+}
 
 
 /* 
